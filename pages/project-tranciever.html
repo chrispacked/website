@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caleb Clayton | Transciever</title>
+    <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">Caleb Clayton</h1>
+
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+
+                <!-- About dropdown -->
+                <li class="dropdown" id="aboutDropdown">
+                    <a href="#about" aria-haspopup="true" aria-expanded="false">
+                        About
+                    </a>
+                    <ul class="dropdown-menu" aria-label="submenu">
+                        <li><a href="../files/resume 2026 pdf.pdf">Resume</a></li>
+                        <li><a href="games.html">Games I Like</a></li>
+                        <li><a href="art.html">Art I Like</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Hero with video -->
+        <section id="home" class="hero">
+            <div>
+                <h2>Art I Like.</h2>
+
+                <!-- Replace the src below with the path to your video file -->
+                <video class="hero-video" controls>
+                    <source src="../videos/transciever.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section contact">
+            <h2>Contact</h2>
+            <p>Email:
+                <a href="mailto:calclayt2025@gmail.com">calclayt2025@gmail.com</a>
+            </p>
+            <p>GitHub:
+                <a href="https://github.com/chrispacked">github.com/chrispacked</a>
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Caleb Clayton. All rights reserved.</p>
+    </footer>
+
+    <!-- small script for mobile dropdown toggling -->
+    <script>
+        (function() {
+            const dropdown = document.getElementById('aboutDropdown');
+            const link = dropdown.querySelector('a[href="#about"]');
+
+            function isMobile() {
+                return window.innerWidth <= 768;
+            }
+
+            function handleClick(e) {
+                if (!isMobile()) return;
+                e.preventDefault();
+                dropdown.classList.toggle('open');
+                const expanded = dropdown.classList.contains('open');
+                link.setAttribute('aria-expanded', expanded);
+            }
+
+            link.addEventListener('click', handleClick);
+
+            document.addEventListener('click', function(e) {
+                if (isMobile() && !dropdown.contains(e.target)) {
+                    dropdown.classList.remove('open');
+                    link.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            window.addEventListener('resize', function() {
+                if (!isMobile()) {
+                    dropdown.classList.remove('open');
+                    link.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+    </script>
+
+</body>
+</html>
+
+
+
