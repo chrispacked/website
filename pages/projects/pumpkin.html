@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caleb Clayton | Transciever</title>
+    <link rel="stylesheet" href="../../style.css" />
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">Caleb Clayton</h1>
+
+            <ul class="nav-links">
+                <li><a href="../../index.html">Home</a></li>
+
+                <!-- About dropdown -->
+                <li class="dropdown" id="aboutDropdown">
+                    <a aria-haspopup="true" aria-expanded="false">
+                        About
+                    </a>
+                    <ul class="dropdown-menu" aria-label="submenu">
+                        <li><a href="../../files/resume 2026 pdf.pdf">Resume</a></li>
+                        <li><a href="../games.html">Games I Like</a></li>
+                        <li><a href="../art.html">Art I Like</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="../../index.html#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Hero with video -->
+        <section id="home" class="hero">
+            <div>
+            <h2>Interactive pumpkins (work in progress)</h2>
+                <video class="hero-video" controls>
+                    <source src="../../videos/pumpkin.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            <h2>Display eyes</h2>
+                <video class="hero-video" controls>
+                    <source src="../../videos/matrix-display-blink.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+        <!-- Description -->
+        <section id="Description" class="section">
+            <h2>Description</h2>
+            <p>
+                TTU Microcontroller Project lab. Two interactive 3D printed pumpkins with 
+                animated eyes, one gesture recognition and the other with voice recomgnition 
+                and responses.
+            </p>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section contact">
+            <h2>Contact</h2>
+            <p>Email:
+                <a href="mailto:calclayt2025@gmail.com">calclayt2025@gmail.com</a>
+            </p>
+            <p>GitHub:
+                <a href="https://github.com/chrispacked">github.com/chrispacked</a>
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Caleb Clayton. All rights reserved.</p>
+    </footer>
+
+    <!-- small script for mobile dropdown toggling -->
+    <script>
+        (function() {
+            const dropdown = document.getElementById('aboutDropdown');
+            const link = dropdown.querySelector('a[href="#about"]');
+
+            function isMobile() {
+                return window.innerWidth <= 768;
+            }
+
+            function handleClick(e) {
+                if (!isMobile()) return;
+                e.preventDefault();
+                dropdown.classList.toggle('open');
+                const expanded = dropdown.classList.contains('open');
+                link.setAttribute('aria-expanded', expanded);
+            }
+
+            link.addEventListener('click', handleClick);
+
+            document.addEventListener('click', function(e) {
+                if (isMobile() && !dropdown.contains(e.target)) {
+                    dropdown.classList.remove('open');
+                    link.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            window.addEventListener('resize', function() {
+                if (!isMobile()) {
+                    dropdown.classList.remove('open');
+                    link.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+    </script>
+
+</body>
+</html>
+
+
+
