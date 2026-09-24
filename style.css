@@ -19,6 +19,10 @@ body {
     background-color: #dedede;
 }
 
+ul {
+    padding-left: 1rem;
+}
+
 /* Header / Navbar */
 header {
     background-color: #181818;
@@ -136,12 +140,12 @@ header {
 }
 
 .hero h2 {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;   /* increased for spacing above video */
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     margin-bottom: 2rem;
     max-width: 600px;
     margin-left: auto;
@@ -190,8 +194,17 @@ header {
 }
 
 .section h2 {
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 1.5rem;
+}
+
+.section p, .section ul {
+    font-size: 1.4rem;
+}
+
+.label {
+    font-weight: bold;
+    color: #301b83;
 }
 
 /* Projects */
@@ -209,10 +222,12 @@ header {
 }
 
 .project-card h3 {
+    font-size: 1.4rem;
     margin-bottom: 1rem;
 }
 
 .project-card p {
+    font-size: 1.2rem;
     margin-bottom: 1rem;
 }
 
