@@ -130,7 +130,7 @@ header {
 
 /* Hero / About section */
 .hero {
-    min-height: 80vh;
+    min-height: 78vh;
     display: flex;
     justify-content: center;
     align-items: center;
